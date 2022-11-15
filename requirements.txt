@@ -6,3 +6,7 @@ pandas
 requests
 
 plotly
+
+sendgrid==6.6.0
+
+pytest
