@@ -1,36 +1,29 @@
-# this is the "app/unemployment.py" file...
+# this is the "app/unemployment_report.py" file...
 
 import os
 import json
 from pprint import pprint
 
 import requests
-from dotenv import load_dotenv # <--- ADDITION
-
-load_dotenv() # <--- ADDITION
-
 from plotly.express import line
 
-API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
-
-@@ -23,6 +24,39 @@
-# Display the unemployment rate using a percent sign.
+from app.alpha import API_KEY
 
 request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={API_KEY}"
+
 response = requests.get(request_url)
+
 parsed_response = json.loads(response.text)
-
-
 print(type(parsed_response))
-print(parsed_response)
+pprint(parsed_response)
 
 # Challenge A
 #
-# What is the most recent unemployment rate? And the corresponding date?
+# What is the most recent unemployment rate? And the corresponding date? 
+# Display the unemployment rate using a percent sign.
 
 # breakpoint()
 
-print(latest)
 print("-------------------------")
 latest = parsed_response["data"][0]
 print("LATEST UNEMPLOYMENT RATE:", latest)
