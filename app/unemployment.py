@@ -28,3 +28,19 @@ parsed_response = json.loads(response.text)
 
 latest = parsed_response["data"][0]
 print(latest)
+
+
+# Challenge B
+#
+# What is the average unemployment rate for all months during this calendar year?
+
+this_year = [d for d in data if "2022-" in d["date"]]
+
+rates_this_year = [float(d["value"]) for d in this_year]
+#print(rates_this_year)
+
+
+print("-------------------------")
+print("AVG UNEMPLOYMENT THIS YEAR:", f"{mean(rates_this_year)}%")
+print("NO MONTHS:", len(this_year))
+
