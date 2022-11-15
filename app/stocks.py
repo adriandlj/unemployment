@@ -1,10 +1,6 @@
 # this is the "app/stocks.py" file...
 
-# this is the "app/stocks.py" file...
 
-print("STOCKS REPORT...")
-
-import os
 from pandas import read_csv
 
 from app.alpha import API_KEY
@@ -12,7 +8,10 @@ from app.alpha import API_KEY
 def format_usd(my_price):
     return f"${my_price:,.2f}"
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
+
+    print("STOCKS REPORT...")
 
     symbol = input("Please input a crypto symbol (default: 'NFLX'): ") or "NFLX"
     print("SYMBOL:", symbol)
